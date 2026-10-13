@@ -1,8 +1,8 @@
 def isInterLeaving(nA, nB, nC):
-    print(A[nA], B[nB], C[nC])
-    if (nA == len(A) and nB == len(B) and nC == len(C)):
+    print(A[nA:], B[nB:], C[nC:])
+    if (nA == len(A)) and (nB == len(B)) and (nC == len(C)):
         return True
-    if (len(A) + len(B) == len(C)):
+    if (len(A) + len(B) != len(C)):
         return False
     
     caseA = False

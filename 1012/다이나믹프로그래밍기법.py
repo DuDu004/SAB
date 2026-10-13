@@ -3,27 +3,30 @@ inset = list(map(int, input().split()))
 table = [[False] * (X + 1) for _ in range(n + 1)]
 
 def subsum(table):
-    v = 0
     table[0][0] = True
 
-    for i in range(len(inset)):
-        table[0][i] = True
-    for i in range(1,n):
-        v = 
-    if v > X:
-        v = X
-    for j in range(1,v):
-        table[][] = table[][]
-    for j in range(v, X+1):
-        if table[][]:
-            table[][] = True
+    for i in range(n+1):
+        table[i][0] = True
+
+    for i in range(1,n + 1):
+        v = inset[i-1]
+
+        for j in range(1, X + 1):
+            table[i][j] = table[i-1][j]
+
+        if v > X:
             continue
-        table[][] = table[][]
-    return table[][]
+
+        for j in range(v, X + 1):
+           if table[i-1][j-v]:
+               table[i][j] = True
+
+    return table[n][X]
 
 
 print(subsum(table))
-for i in range(X+1):
+
+for i in range(1, n+1):
     for j in range(X+1):
         print(table[i][j], end="\t")
     print()
